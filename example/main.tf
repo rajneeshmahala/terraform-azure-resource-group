@@ -11,10 +11,13 @@ terraform {
 }
 
 module "resourceGP" {
-  source                  = "../"
-  resource_group_name     = "myrgtest"
-  resource_group_location = "centralindia"
-  tag_map = {
+  source              = "../"
+  organisation        = "opstree"
+  environment         = "dev"
+  workload            = "web"
+  location            = "centralindia"
+  resource_group_name = "myrgtest"
+  tags = {
     Name = "AzureRG"
   }
 }
